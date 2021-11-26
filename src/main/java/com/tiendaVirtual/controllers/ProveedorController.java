@@ -1,4 +1,4 @@
-package com.nttdata.controllers;
+package com.tiendaVirtual.controllers;
 
 import javax.validation.Valid;
 
