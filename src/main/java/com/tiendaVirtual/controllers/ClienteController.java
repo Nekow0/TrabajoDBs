@@ -1,18 +1,39 @@
 package com.nttdata.controllers;
 
-import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
- // rest coontroller responde a peticiones de la URL
+
+import com.nttdata.models.Cliente;
+import com.nttdata.services.ClienteService;
+import com.nttdata.services.ProveedorService;
+
 @Controller
 @RequestMapping("/clientes") 
-// este request mapping es general
 public class ClienteController {
-	
+	@Autowired
+	ClienteService clienteService;
+	@Autowired
+	ProveedorService proveedorService;
 	@RequestMapping("")
+	public String index(Model model) {
+		model.addAttribute("cliente", new Cliente());
+		model.addAttribute("listaClientes", clienteService.obtenerListaClientes());
+		model.addAttribute("listaProveedores", proveedorService.obtenerListaProveedor());
+		return "cliente.jsp";
+	}
+	@RequestMapping("/crear")
+	public String crearcliente(@Valid @ModelAttribute("cliente") Cliente cliente) {
+		clienteService.insertarCliente(cliente);
+		return "redirect:/cliente";
+	}
+	
+	
+	/*
 	//model instancia la clase, pasar info de back to front, al llegar a la pagina manda info del back para el front 
 	//sesion se guardan temporalmente
 	
@@ -29,7 +50,7 @@ public class ClienteController {
 		model.addAttribute("apellido", "lizama");
 		model.addAttribute("wasabi", "no utiliza clases");
 		return "cliente.jsp";
-	} */
+	} 
 	
 	@RequestMapping("/pagos")
 	//segundo o tercer request mapping se anidan
@@ -47,4 +68,5 @@ public class ClienteController {
 	public String rutCliente(@PathVariable("rut") Integer rut, @PathVariable("dv") String dv ) {
 		return "el rut es: "+rut+" , de digito: "+dv;
 	}
+	*/
 }
