@@ -25,23 +25,22 @@ public class Cliente {
 	// datos
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto incrementable
 	private Long id;
-
 	private String rut;
 	private String nombre;
 	private int edad;
 	private String sexo;
-// Boolean != boolean
+	// Boolean != boolean
 	private Boolean plan;
 	private String celular;
 	private Date createdAt;
 	private Date updatedAt;
-// manytomany
+	// manytomany
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "clientes_proveedores", // tabla intermedia
 			joinColumns = @JoinColumn(name = "cliente_id"), inverseJoinColumns = @JoinColumn(name = "proveedor_id"))
 	private List<Cliente> proveedores;
 
-//Constructores
+	//Constructores
 	public Cliente() {
 		super();
 	}
@@ -56,7 +55,7 @@ public class Cliente {
 		this.celular = celular;
 	}
 
-//Metodos
+	//Metodos
 
 	@Override
 	public String toString() {

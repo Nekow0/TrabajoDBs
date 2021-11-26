@@ -20,20 +20,13 @@
 			<form:label path="nombre">Nombre:</form:label>
 			<form:input type="text" path="nombre"/>
 			<br>
-			<form:label path="apellido">Apellido:</form:label>
-			<form:input type="text" path="apellido"/>
-			<br>
 			<form:label path="email">Email:</form:label>
 			<form:input type="text" path="email"/>
 			<br>
 			<form:label path="edad">Edad:</form:label>
 			<form:input type="text" path="edad"/>
+	
 			<br>
-			<form:label path="plan">Plan:</form:label>
-			<form:input type="text" path="plan"/>
-			<br>
-			<form:label path="celular">Celular:</form:label>
-			<form:input type="text" path="celular"/>
 			<br>
 			<form:form action="cliente/cliente.jsp" method="get">
 				<input type="checkbox" name="cliente" value="${cliente.getId()}">
@@ -47,11 +40,9 @@
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Apellido</th>
 					<th scope="col">Email</th>
 					<th scope="col">Edad</th>
 					<th scope="col">Plan</th>
-					<th scope="col">Celular</th>
 					<th scope="col-2">Acciones</th>
 				</tr>
 			</thead>
