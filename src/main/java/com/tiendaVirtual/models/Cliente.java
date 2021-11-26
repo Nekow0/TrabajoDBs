@@ -50,9 +50,9 @@ public class Cliente {
 		super();
 		this.rut = rut;
 		this.nombre = nombre;
-		edad = edad;
-		sexo = sexo;
-		plan = plan;
+		this.edad = edad;
+		this.sexo = sexo;
+		this.plan = plan;
 		this.celular = celular;
 	}
 
