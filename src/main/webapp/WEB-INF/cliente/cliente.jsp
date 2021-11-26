@@ -16,7 +16,7 @@
 <body>
 <jsp:include page="../templates/navbar.jsp"/>
 	<div class="container-fluid">
-		<form:form method="post" action="/proveedor/crear" modelAttribute="proveedor">
+		<form:form method="post" action="/cliente/crear" modelAttribute="cliente">
 			<form:label path="nombre">Nombre:</form:label>
 			<form:input type="text" path="nombre"/>
 			<br>
@@ -30,7 +30,7 @@
 			<form:input type="text" path="edad"/>
 			<br>
 			<form:label path="plan">Plan:</form:label>
-			<form:input type="text" path="edad"/>
+			<form:input type="text" path="plan"/>
 			<br>
 			<form:label path="celular">Celular:</form:label>
 			<form:input type="text" path="celular"/>
