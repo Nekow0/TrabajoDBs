@@ -23,9 +23,9 @@ public class ClienteController {
 	@RequestMapping("")
 	public String index(Model model) {
 		model.addAttribute("cliente", new Cliente());
-		//model.addAttribute("listaClientes", clienteService.obtenerListaClientes());
+		model.addAttribute("listaClientes", clienteService.obtenerListaClientes());
 		model.addAttribute("listaProveedores", proveedorService.obtenerListaProveedor());
-		return "cliente.jsp";
+		return "cliente/cliente.jsp";
 	}
 
 	@RequestMapping("/crear")
@@ -33,6 +33,7 @@ public class ClienteController {
 		//clienteService.insertarCliente(cliente);
 		return "redirect:/cliente";
 	}
+	
 
 	/*
 	 * //model instancia la clase, pasar info de back to front, al llegar a la

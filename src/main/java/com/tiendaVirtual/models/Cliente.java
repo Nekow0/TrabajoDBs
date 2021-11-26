@@ -28,10 +28,10 @@ public class Cliente {
 
 	private String rut;
 	private String nombre;
-	private int Edad;
-	private String Sexo;
+	private int edad;
+	private String sexo;
 // Boolean != boolean
-	private Boolean Plan;
+	private Boolean plan;
 	private String celular;
 	private Date createdAt;
 	private Date updatedAt;
@@ -50,9 +50,9 @@ public class Cliente {
 		super();
 		this.rut = rut;
 		this.nombre = nombre;
-		Edad = edad;
-		Sexo = sexo;
-		Plan = plan;
+		edad = edad;
+		sexo = sexo;
+		plan = plan;
 		this.celular = celular;
 	}
 
@@ -60,11 +60,26 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [rut=" + rut + ", nombre=" + nombre + ", Edad=" + Edad + ", Sexo=" + Sexo + ", Plan=" + Plan
+		return "Cliente [rut=" + rut + ", nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + ", plan=" + plan
 				+ ", celular=" + celular + "]";
 	}
 
 //Getters and Setters
+
+	
+
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getRut() {
 		return rut;
@@ -83,27 +98,27 @@ public class Cliente {
 	}
 
 	public int getEdad() {
-		return Edad;
+		return edad;
 	}
 
 	public void setEdad(int edad) {
-		Edad = edad;
+		this.edad = edad;
 	}
 
 	public String getSexo() {
-		return Sexo;
+		return sexo;
 	}
 
 	public void setSexo(String sexo) {
-		Sexo = sexo;
+		this.sexo = sexo;
 	}
 
 	public Boolean getPlan() {
-		return Plan;
+		return plan;
 	}
 
 	public void setPlan(Boolean plan) {
-		Plan = plan;
+		this.plan = plan;
 	}
 
 	public String getCelular() {
@@ -112,19 +127,6 @@ public class Cliente {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	@PrePersist
-	protected void onCreate() {
-		this.createdAt = new Date();
 	}
 
 	@PreUpdate
