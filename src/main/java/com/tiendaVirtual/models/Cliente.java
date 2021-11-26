@@ -1,4 +1,5 @@
-package com.nttdata.models;
+package com.tiendaVirtual.models;
+
 import java.util.Date;
 import java.util.List;
 
@@ -13,16 +14,18 @@ import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="clientes")
+@Table(name = "clientes")
 
 public class Cliente {
 //Atributos
-	@Id // primary key, este es un conjuro magico, de esta forma crea la tabla automaticamente en la base
-	//datos
-	@GeneratedValue(strategy= GenerationType.IDENTITY) // auto incrementable
+	@Id // primary key, este es un conjuro magico, de esta forma crea la tabla
+		// automaticamente en la base
+	// datos
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto incrementable
 	private Long id;
-	
+
 	private String rut;
 	private String nombre;
 	private int Edad;
@@ -33,20 +36,16 @@ public class Cliente {
 	private Date createdAt;
 	private Date updatedAt;
 // manytomany
-	@ManyToMany(fetch= FetchType.LAZY)
-	@JoinTable(
-			name="clientes_proveedores", //tabla intermedia
-			joinColumns =@JoinColumn(name="cliente_id"),
-			inverseJoinColumns=@JoinColumn(name="proveedor_id")
-			)
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "clientes_proveedores", // tabla intermedia
+			joinColumns = @JoinColumn(name = "cliente_id"), inverseJoinColumns = @JoinColumn(name = "proveedor_id"))
 	private List<Cliente> proveedores;
-	
-	
+
 //Constructores
 	public Cliente() {
 		super();
 	}
-	
+
 	public Cliente(String rut, String nombre, int edad, String sexo, Boolean plan, String celular) {
 		super();
 		this.rut = rut;
@@ -56,12 +55,10 @@ public class Cliente {
 		Plan = plan;
 		this.celular = celular;
 	}
-	
-
 
 //Metodos
-	
-@Override
+
+	@Override
 	public String toString() {
 		return "Cliente [rut=" + rut + ", nombre=" + nombre + ", Edad=" + Edad + ", Sexo=" + Sexo + ", Plan=" + Plan
 				+ ", celular=" + celular + "]";
@@ -72,36 +69,47 @@ public class Cliente {
 	public String getRut() {
 		return rut;
 	}
+
 	public void setRut(String rut) {
 		this.rut = rut;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public int getEdad() {
 		return Edad;
 	}
+
 	public void setEdad(int edad) {
 		Edad = edad;
 	}
+
 	public String getSexo() {
 		return Sexo;
 	}
+
 	public void setSexo(String sexo) {
 		Sexo = sexo;
 	}
+
 	public Boolean getPlan() {
 		return Plan;
 	}
+
 	public void setPlan(Boolean plan) {
 		Plan = plan;
 	}
+
 	public String getCelular() {
 		return celular;
 	}
+
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
@@ -113,14 +121,40 @@ public class Cliente {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	 @PrePersist
-	    protected void onCreate(){
-	        this.createdAt = new Date();
-	    }
-	    @PreUpdate
-	    protected void onUpdate(){
-	        this.updatedAt = new Date();
-	    }
+
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public List<Cliente> getProveedores() {
+		return proveedores;
+	}
+
+	public void setProveedores(List<Cliente> proveedores) {
+		this.proveedores = proveedores;
+	}
 	
 
 }

@@ -7,8 +7,8 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.models.Cliente;
-import com.nttdata.repository.ClienteRepository;
+import com.tiendaVirtual.models.Cliente;
+import com.tiendaVirtual.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {
@@ -22,7 +22,7 @@ public class ClienteService {
 
 	public void insertarCliente(@Valid Cliente cliente) {
 		clienteRepository.save(cliente);
-		
+
 	}
 
 }

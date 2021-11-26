@@ -7,8 +7,8 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.models.Proveedor;
-import com.nttdata.repository.ProveedorRepository;
+import com.tiendaVirtual.models.Proveedor;
+import com.tiendaVirtual.repositories.ProveedorRepository;
 
 @Service
 public class ProveedorService {
