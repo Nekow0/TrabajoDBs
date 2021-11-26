@@ -20,7 +20,7 @@ public List<Proveedor> obtenerListaProveedor() {
 }
 
 public void insertarProovedor(@Valid Proveedor proveedor) {
-	// TODO Auto-generated method stub
+	
 	proveedorRepository.save(proveedor);
 }
 }
