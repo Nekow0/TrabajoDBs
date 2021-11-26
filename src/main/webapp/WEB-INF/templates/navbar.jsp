@@ -10,13 +10,10 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/usuario">Usuarios</a>
+          <a class="nav-link" href="/cliente">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/celular">Celulares</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/proyecto">Proyectos</a>
+          <a class="nav-link" href="/proveedor">Proveedores</a>
         </li>
       </ul>
       <span class="navbar-text">
