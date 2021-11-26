@@ -17,16 +17,23 @@
 <jsp:include page="../templates/navbar.jsp"/>
 	<div class="container-fluid">
 		<form:form method="post" action="/cliente/crear" modelAttribute="cliente">
+			<form:label path="rut">Rut:</form:label>
+			<form:input type="text" path="rut"/>
+			<br>
 			<form:label path="nombre">Nombre:</form:label>
 			<form:input type="text" path="nombre"/>
 			<br>
-			<form:label path="email">Email:</form:label>
-			<form:input type="text" path="email"/>
-			<br>
 			<form:label path="edad">Edad:</form:label>
 			<form:input type="text" path="edad"/>
-	
 			<br>
+			<form:label path="sexo">Sexo:</form:label>
+			<form:input type="text" path="sexo"/>
+			<br>
+			<form:label path="plan">Plan:</form:label>
+			<form:input type="text" path="plan"/>
+			<br>
+			<form:label path=celular">Celular:</form:label>
+			<form:input type="text" path="celular"/>
 			<br>
 			<form:form action="cliente/cliente.jsp" method="get">
 				<input type="checkbox" name="cliente" value="${cliente.getId()}">
@@ -39,10 +46,12 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
+					<th scope="col">Rut</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Email</th>
 					<th scope="col">Edad</th>
+					<th scope="col">Sexo</th>
 					<th scope="col">Plan</th>
+					<th scope="col">Celular</th>
 					<th scope="col-2">Acciones</th>
 				</tr>
 			</thead>
@@ -50,11 +59,12 @@
 				<c:forEach items="${listaClientes}" var="proveedor">
 					<tr>
 						<th scope="row">${cliente.getId()}</th>
+						<td>${cliente.getRut()}</td>
 						<td>${cliente.getNombre()}</td>
-                        <td>${cliente.getEmail()}</td>
-                        <td>${cliente.getEdad()}</td>
-                         <td>${cliente.getPlan()}</td>
-                          <td>${cliente.getCelular()}</td>
+						<td>${cliente.getEdad()}</td>
+						<td>${cliente.getSexo()}</td>
+						<td>${cliente.getPlan()}</td>
+                        <td>${cliente.getCelular()}</td>
                         <td>
                         	<a href="/cliente/${cliente.getId()}/editar" class="btn btn-primary" role="button" data-bs-toggle="button">Editar</a>
                         </td>

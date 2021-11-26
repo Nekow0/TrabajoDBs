@@ -29,8 +29,8 @@
 			<form:label path="edad">Edad:</form:label>
 			<form:input type="text" path="edad"/>
 			<br>
-			<form:form action="proveedor/proveedor.jsp" method="get">
-				<input type="checkbox" name="cliente" value="${proveedor.getId()}">
+			<form:form action="cliente/cliente.jsp" method="get">
+				<input type="checkbox" name="cliente" value="${cliente.getId()}">
 			</form:form>
 			<br>
 			<input type="submit" value="Crear Proveedor">
